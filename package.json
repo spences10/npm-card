@@ -1,10 +1,10 @@
 {
   "name": "spences10",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "My npm card",
   "main": "index.js",
   "bin": {
-    "bitandbang": "./bin/card.js"
+    "spences10": "./bin/card.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,7 +13,12 @@
     "type": "git",
     "url": "git+https://github.com/spences10/spences10.git"
   },
-  "keywords": [],
+  "keywords": [
+    "npm",
+    "card",
+    "business card",
+    "user details"
+  ],
   "author": "Scott Spence <spences10apps@gmail.com> (https://scottspence.me/)",
   "license": "MIT",
   "bugs": {
