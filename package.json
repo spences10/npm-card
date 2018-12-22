@@ -1,13 +1,14 @@
 {
   "name": "spences10",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "My npm card",
   "main": "index.js",
   "bin": {
     "spences10": "./bin/card.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "npm run build",
+    "build": "node build.js"
   },
   "repository": {
     "type": "git",
