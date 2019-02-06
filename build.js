@@ -63,5 +63,5 @@ const output =
 
 fs.writeFileSync(
   path.join(__dirname, 'bin/output'),
-  chalk.green(boxen(output, options))
+  chalk.yellow(boxen(output, options))
 )
