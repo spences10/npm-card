@@ -18,7 +18,7 @@ const data = {
   name: chalk.white('Scott Spence /'),
   handle: chalk.cyan('spences10'),
   work: chalk.white('Engineer in Creative Products at Karmarama'),
-  twitter: chalk.cyan('https://twitter.com/ScottDevTweets'),
+  twitter: chalk.cyan('https://twitter.com/spences10'),
   github: chalk.cyan('https://github.com/spences10'),
   linkedin: chalk.cyan(
     'https://www.linkedin.com/in/linkedinscottspence/'
