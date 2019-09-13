@@ -10,7 +10,7 @@ const path = require('path')
 const options = {
   padding: 1,
   margin: 1,
-  borderStyle: 'round'
+  borderStyle: 'round',
 }
 
 // Text + chalk definitions
@@ -20,9 +20,7 @@ const data = {
   work: chalk.white('Engineer in Creative Products at Karmarama'),
   twitter: chalk.cyan('https://twitter.com/spences10'),
   github: chalk.cyan('https://github.com/spences10'),
-  linkedin: chalk.cyan(
-    'https://www.linkedin.com/in/linkedinscottspence/'
-  ),
+  linkedin: chalk.cyan('https://www.linkedin.com/in/spences10/'),
   web: chalk.cyan('https://scottspence.me'),
   npx: chalk.white('npx spences10'),
   labelWork: chalk.white.bold('      Work:'),
@@ -30,7 +28,7 @@ const data = {
   labelGitHub: chalk.white.bold('    GitHub:'),
   labelLinkedIn: chalk.white.bold('  LinkedIn:'),
   labelWeb: chalk.white.bold('       Web:'),
-  labelCard: chalk.white.bold('      Card:')
+  labelCard: chalk.white.bold('      Card:'),
 }
 
 // Actual strings we're going to output
