@@ -1,6 +1,6 @@
 {
   "name": "spences10",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "My npm card",
   "main": "index.js",
   "bin": {
