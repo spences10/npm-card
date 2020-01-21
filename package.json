@@ -9,7 +9,7 @@
   "scripts": {
     "prepublish": "npm run build",
     "build": "node build.js",
-    "release": "np"
+    "release": "np --no-tests"
   },
   "devDependencies": {
     "boxen": "4.2.0",
