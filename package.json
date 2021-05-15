@@ -16,9 +16,9 @@
     "contents": "dist"
   },
   "devDependencies": {
-    "boxen": "4.2.0",
-    "chalk": "3.0.0",
-    "np": "5.2.1"
+    "boxen": "5.0.1",
+    "chalk": "4.1.1",
+    "np": "7.5.0"
   },
   "repository": {
     "type": "git",
@@ -35,5 +35,13 @@
   "bugs": {
     "url": "https://github.com/spences10/spences10/issues"
   },
-  "homepage": "https://github.com/spences10/spences10#readme"
+  "homepage": "https://github.com/spences10/spences10#readme",
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "es5",
+    "printWidth": 70,
+    "arrowParens": "avoid",
+    "proseWrap": "always"
+  }
 }
