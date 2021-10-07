@@ -251,15 +251,15 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
-boxen@6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/boxen/-/boxen-6.0.0.tgz#f8649bfbd45cbe01b7a644671ce2d5455ee7fc88"
-  integrity sha512-AEMBdGJ4Qza4QjcdBVjyeEZzw9GAnmmN/5p9X5fmccX5SdbPK6dmGIcapEuWBkneROShwSParxEapLklBE5wow==
+boxen@6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/boxen/-/boxen-6.1.0.tgz#e24023a145fbc2d0181eabca873db023d76e6bb9"
+  integrity sha512-L42q0w01ntFTHF7vaYHayMSuZTPGPJL24e5Tf2n3al72eEO1mYaTde+oodfCxWqri4M0Q8fLfB5bfCIPY2VnRQ==
   dependencies:
     ansi-align "^3.0.1"
     camelcase "^6.2.0"
     chalk "^4.1.2"
-    cli-boxes "^2.2.1"
+    cli-boxes "^3.0.0"
     string-width "^5.0.1"
     type-fest "^2.3.4"
     widest-line "^4.0.0"
@@ -412,6 +412,11 @@ cli-boxes@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/cli-boxes/-/cli-boxes-2.2.1.tgz#ddd5035d25094fce220e9cab40a45840a440318f"
   integrity sha512-y4coMcylgSCdVinjiDBuR8PCC2bLjyGTwEmPb9NHR/QaNU6EUOXcTY/s6VjGMD6ENSEaeQYHCY0GNGS5jfMwPw==
+
+cli-boxes@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/cli-boxes/-/cli-boxes-3.0.0.tgz#71a10c716feeba005e4504f36329ef0b17cf3145"
+  integrity sha512-/lzGpEWL/8PfI0BmBOPRwp0c/wFNX1RdUML3jK/RcSBA9T8mZDdQpqYBKtCFTOfQbwPqWEOpjqW+Fnayc0969g==
 
 cli-cursor@^2.0.0, cli-cursor@^2.1.0:
   version "2.1.0"
