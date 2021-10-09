@@ -251,10 +251,10 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
-boxen@6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/boxen/-/boxen-6.1.0.tgz#e24023a145fbc2d0181eabca873db023d76e6bb9"
-  integrity sha512-L42q0w01ntFTHF7vaYHayMSuZTPGPJL24e5Tf2n3al72eEO1mYaTde+oodfCxWqri4M0Q8fLfB5bfCIPY2VnRQ==
+boxen@6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/boxen/-/boxen-6.2.0.tgz#965e80a7fcb38797d713451440ccb78853a886f8"
+  integrity sha512-RgnYHtLIlz3VcoShtCMgcgDg5ZTW4wUhDYyQ8C1ovvfxZfbtCvb/X0wcoH/GTiC1XHDEGgJKMF0uQI3hzeanWw==
   dependencies:
     ansi-align "^3.0.1"
     camelcase "^6.2.0"
