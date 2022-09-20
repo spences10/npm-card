@@ -17,7 +17,7 @@ const options = {
 const data = {
   name: chalk.white('Scott Spence /'),
   handle: chalk.cyan('spences10'),
-  work: chalk.white('Developer Advocate @GraphCMS'),
+  work: chalk.white('Developer Relations Engineer @Storyblok'),
   twitter: chalk.cyan('https://ss10.dev/twitter'),
   github: chalk.cyan('https://ss10.dev/git'),
   linkedin: chalk.cyan('https://ss10.dev/li'),
