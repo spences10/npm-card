@@ -1,6 +1,6 @@
 {
   "name": "spences10",
-  "version": "1.0.37",
+  "version": "1.0.38",
   "description": "My npm card",
   "main": "index.js",
   "bin": {
@@ -12,7 +12,7 @@
     "release": "np"
   },
   "devDependencies": {
-    "boxen": "7.0.1",
+    "boxen": "7.0.2",
     "chalk": "5.2.0",
     "np": "7.7.0"
   },
