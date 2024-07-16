@@ -1,24 +1,29 @@
 {
   "name": "spences10",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "My npm card",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "bin": {
-    "spences10": "./bin/card.js"
+    "spences10": "dist/index.js"
   },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
-    "prepublish": "npm run build",
-    "build": "node build.js",
-    "release": "np --no-tests"
+    "build": "tsc",
+    "prepublishOnly": "pnpm run build",
+    "start": "node dist/index.js"
   },
-  "np": {
-    "yarn": false,
-    "contents": "dist"
+  "dependencies": {
+    "boxen": "^5.1.2",
+    "chalk": "^4.1.2"
   },
   "devDependencies": {
-    "boxen": "5.0.1",
-    "chalk": "4.1.1",
-    "np": "7.5.0"
+    "@types/node": "^20.4.5",
+    "typescript": "^5.1.6"
   },
   "repository": {
     "type": "git",
@@ -30,18 +35,10 @@
     "business card",
     "user details"
   ],
-  "author": "Scott Spence <spences10apps@gmail.com> (https://scottspence.me/)",
+  "author": "Scott Spence <spences10apps@gmail.com> (https://scottspence.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/spences10/spences10/issues"
   },
-  "homepage": "https://github.com/spences10/spences10#readme",
-  "prettier": {
-    "singleQuote": true,
-    "semi": false,
-    "trailingComma": "es5",
-    "printWidth": 70,
-    "arrowParens": "avoid",
-    "proseWrap": "always"
-  }
+  "homepage": "https://github.com/spences10/spences10#readme"
 }
