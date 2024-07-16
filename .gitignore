@@ -4,14 +4,3 @@ node_modules/
 # TypeScript output
 dist/
 
-# Logs
-*.log
-
-# Editor directories and files
-.vscode/
-
-# pnpm lock file (if you don't want to track it)
-pnpm-lock.yaml
-
-# Environment variables
-.env
