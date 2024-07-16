@@ -1,11 +1,14 @@
 {
   "name": "spences10",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "My npm card",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
     "spences10": "dist/index.js"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "files": [
     "dist",
@@ -22,8 +25,11 @@
     "chalk": "^4.1.2"
   },
   "devDependencies": {
-    "@types/node": "^20.4.5",
-    "typescript": "^5.1.6"
+    "@types/node": "^18.19.39",
+    "cli-boxes": "^4.0.0",
+    "type-fest": "^4.21.0",
+    "typescript": "^5.1.6",
+    "undici-types": "^6.19.2"
   },
   "repository": {
     "type": "git",
