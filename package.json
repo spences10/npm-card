@@ -1,6 +1,6 @@
 {
   "name": "spences10",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "My npm card",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
