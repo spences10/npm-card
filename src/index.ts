@@ -1,53 +1,57 @@
 import chalk from "chalk";
 import boxen, { Options as BoxenOptions } from "boxen";
+import gradient from "gradient-string";
 
 interface CardData {
-  name: string;
-  handle: string;
-  work: string;
-  twitter: string;
-  github: string;
-  linkedin: string;
-  web: string;
+	name: string;
+	handle: string;
+	work: string;
+	twitter: string;
+	github: string;
+	linkedin: string;
+	web: string;
 }
 
-const cardData: CardData = {
-  name: "Scott Spence",
-  handle: "spences10",
-  work: "Engineering Lead @XtendOps",
-  twitter: "https://ss10.dev/twitter",
-  github: "https://ss10.dev/git",
-  linkedin: "https://ss10.dev/li",
-  web: "https://scottspence.com",
+const card_data: CardData = {
+	name: "Scott Spence",
+	handle: "spences10",
+	work: "Engineering Lead @XtendOps",
+	twitter: "https://ss10.dev/twitter",
+	github: "https://ss10.dev/git",
+	linkedin: "https://ss10.dev/li",
+	web: "https://scottspence.com",
 };
 
-const boxenOptions: BoxenOptions = {
-  padding: 1,
-  margin: 1,
-  borderStyle: "round",
-  borderColor: "yellow",
+const boxen_options: BoxenOptions = {
+	padding: 1,
+	margin: 1,
+	borderStyle: "round",
+	borderColor: "#663399", 
 };
 
-function createCard(data: CardData): string {
-  const lines = [
-    `${chalk.white(data.name)} / ${chalk.cyan(data.handle)}`,
-    "",
-    `${chalk.white.bold("Work:")}  ${chalk.white(data.work)}`,
-    `${chalk.white.bold("Twitter:")}  ${chalk.cyan(data.twitter)}`,
-    `${chalk.white.bold("GitHub:")}  ${chalk.cyan(data.github)}`,
-    `${chalk.white.bold("LinkedIn:")}  ${chalk.cyan(data.linkedin)}`,
-    `${chalk.white.bold("Web:")}  ${chalk.cyan(data.web)}`,
-    "",
-    `${chalk.white.bold("Card:")}  ${chalk.white("npx spences10")}`,
-  ];
+function create_card(data: CardData): string {
+	const name_gradient = gradient.passion;
+	const link_gradient = gradient.instagram;
+	const work_gradient = gradient.rainbow;
 
-  return boxen(lines.join("\n"), boxenOptions);
+	const lines = [
+		name_gradient(data.name.toUpperCase()),
+		chalk.cyan(`@${data.handle}`),
+		"",
+		`${chalk.bold("Work:")}  ${work_gradient(data.work)}`,
+		`${chalk.bold("Twitter:")}  ${link_gradient(data.twitter)}`,
+		`${chalk.bold("GitHub:")}  ${link_gradient(data.github)}`,
+		`${chalk.bold("LinkedIn:")}  ${link_gradient(data.linkedin)}`,
+		`${chalk.bold("Web:")}  ${link_gradient(data.web)}`,
+	];
+
+	return boxen(lines.join("\n"), boxen_options);
 }
 
-export function displayCard(): void {
-  console.log(createCard(cardData));
+export function display_card(): void {
+	console.log(create_card(card_data));
 }
 
 if (require.main === module) {
-  displayCard();
+	display_card();
 }
