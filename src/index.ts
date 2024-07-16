@@ -1,5 +1,7 @@
-import chalk from "chalk";
+#!/usr/bin/env node
+
 import boxen, { Options as BoxenOptions } from "boxen";
+import chalk from "chalk";
 import gradient from "gradient-string";
 
 interface CardData {
@@ -26,7 +28,7 @@ const boxen_options: BoxenOptions = {
 	padding: 1,
 	margin: 1,
 	borderStyle: "round",
-	borderColor: "#663399", 
+	borderColor: "#663399",
 };
 
 function create_card(data: CardData): string {

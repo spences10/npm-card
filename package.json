@@ -1,11 +1,11 @@
 {
   "name": "spences10",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "My npm card",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "spences10": "dist/index.js"
+    "spences10": "./dist/index.js"
   },
   "files": [
     "dist",
@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "prepublishOnly": "pnpm run build",
+    "prepublishOnly": "npm run build",
     "start": "node dist/index.js"
   },
   "devDependencies": {
