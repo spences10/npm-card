@@ -1,6 +1,6 @@
 {
   "name": "spences10",
-  "version": "3.0.0",
+  "version": "3.0.2",
   "description": "My npm card",
   "type": "module",
   "main": "dist/index.js",
@@ -14,7 +14,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && chmod +x dist/index.js",
     "prepublishOnly": "npm run build",
     "start": "node dist/index.js"
   },
