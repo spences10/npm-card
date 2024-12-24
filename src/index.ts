@@ -8,7 +8,7 @@ interface CardData {
 	name: string;
 	handle: string;
 	work: string;
-	twitter: string;
+	bluesky: string;
 	github: string;
 	linkedin: string;
 	web: string;
@@ -18,7 +18,7 @@ const card_data: CardData = {
 	name: "Scott Spence",
 	handle: "spences10",
 	work: "Engineering Lead @XtendOps",
-	twitter: "https://ss10.dev/twitter",
+	bluesky: "https://ss10.dev/bluesky",
 	github: "https://ss10.dev/git",
 	linkedin: "https://ss10.dev/li",
 	web: "https://scottspence.com",
@@ -41,7 +41,7 @@ function create_card(data: CardData): string {
 		chalk.cyan(`@${data.handle}`),
 		"",
 		`${chalk.bold("Work:")}  ${work_gradient(data.work)}`,
-		`${chalk.bold("Twitter:")}  ${link_gradient(data.twitter)}`,
+		`${chalk.bold("Bluesky:")}  ${link_gradient(data.bluesky)}`,
 		`${chalk.bold("GitHub:")}  ${link_gradient(data.github)}`,
 		`${chalk.bold("LinkedIn:")}  ${link_gradient(data.linkedin)}`,
 		`${chalk.bold("Web:")}  ${link_gradient(data.web)}`,
