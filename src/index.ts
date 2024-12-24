@@ -54,6 +54,6 @@ export function display_card(): void {
 	console.log(create_card(card_data));
 }
 
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
 	display_card();
 }
