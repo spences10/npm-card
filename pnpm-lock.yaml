@@ -21,7 +21,7 @@ devDependencies:
     version: 1.1.6
   '@types/node':
     specifier: ^22.10.2
-    version: 22.16.0
+    version: 22.19.5
   typescript:
     specifier: ^5.7.2
     version: 5.7.2
@@ -34,8 +34,8 @@ packages:
       '@types/tinycolor2': 1.4.6
     dev: true
 
-  /@types/node@22.16.0:
-    resolution: {integrity: sha512-B2egV9wALML1JCpv3VQoQ+yesQKAmNMBIAY7OteVrikcOcAkWm+dGL6qpeCktPjAv6N1JLnhbNiqS35UpFyBsQ==}
+  /@types/node@22.19.5:
+    resolution: {integrity: sha512-HfF8+mYcHPcPypui3w3mvzuIErlNOh2OAG+BCeBZCEwyiD5ls2SiCwEyT47OELtf7M3nHxBdu0FsmzdKxkN52Q==}
     dependencies:
       undici-types: 6.21.0
     dev: true
