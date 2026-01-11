@@ -16,6 +16,8 @@
   "scripts": {
     "build": "tsc && chmod +x dist/index.js",
     "start": "node dist/index.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "changeset": "changeset",
     "version": "changeset version",
     "release": "pnpm run build && changeset publish"
@@ -29,6 +31,7 @@
     "@changesets/cli": "^2.29.8",
     "@types/gradient-string": "^1.1.6",
     "@types/node": "^25.0.6",
+    "prettier": "^3.7.4",
     "typescript": "^5.9.3"
   },
   "repository": {
