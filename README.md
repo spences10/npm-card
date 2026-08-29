@@ -1,38 +1,62 @@
 # My npm card
 
-```js
+Run the card without installing it:
+
+```bash
 npx spences10
 ```
 
-Thanks to [Tierney Cyren], and the [original repo]
+## CLI options
 
-## Run locally
+```text
+--plain       Output an unstyled, copy-friendly card
+--json        Output the profile as JSON
+--no-color    Disable ANSI colors
+--help        Show usage information
+--version     Show the installed version
+```
 
-From the root of the project:
+For example:
 
 ```bash
+npx spences10 --plain
+npx spences10 --json
+```
+
+## API
+
+Create a custom card or display it directly:
+
+```js
+import { create_card, display_card } from 'spences10';
+
+const profile = {
+	name: 'Ada Lovelace',
+	handle: 'ada',
+	work: 'Programmer',
+	bluesky: 'https://example.com/bluesky',
+	github: 'https://example.com/github',
+	linkedin: 'https://example.com/linkedin',
+	web: 'https://example.com',
+};
+
+console.log(create_card(profile, { plain: true }));
+display_card(profile, { color: false });
+```
+
+The package also exports `default_profile`, `CardProfile`, and
+`CardRenderOptions`.
+
+## Development
+
+```bash
+pnpm install
+pnpm run check
+pnpm run test
 pnpm run build
 ```
 
-To create a global link with pnpm, use:
-
-```bash
-pnpm link --global
-```
-
-This creates a symbolic link to your package in the global pnpm store.
-
-Now you should be able to run your package using:
-
-```bash
-pnpm dlx spences10
-```
-
-When you're done testing, you can unlink the package:
-
-```bash
-pnpm unlink --global spences10
-```
+Thanks to [Tierney Cyren] and the [original repo].
 
 [tierney cyren]: https://github.com/bnb
 [original repo]: https://github.com/bnb/bitandbang

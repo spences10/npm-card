@@ -2,17 +2,22 @@ import boxen, { type Options as BoxenOptions } from 'boxen';
 import chalk from 'chalk';
 import { instagram, passion, rainbow } from 'gradient-string';
 
-interface CardData {
-	name: string;
-	handle: string;
-	work: string;
-	bluesky: string;
-	github: string;
-	linkedin: string;
-	web: string;
+export interface CardProfile {
+	readonly name: string;
+	readonly handle: string;
+	readonly work: string;
+	readonly bluesky: string;
+	readonly github: string;
+	readonly linkedin: string;
+	readonly web: string;
 }
 
-const card_data: CardData = {
+export interface CardRenderOptions {
+	readonly color?: boolean;
+	readonly plain?: boolean;
+}
+
+export const default_profile: CardProfile = {
 	name: 'Scott Spence',
 	handle: 'spences10',
 	work: 'Product Engineer @ Cloud Lobsters',
@@ -29,25 +34,49 @@ const boxen_options: BoxenOptions = {
 	borderColor: '#663399',
 };
 
-function create_card(data: CardData): string {
-	const name_gradient = passion;
-	const link_gradient = instagram;
-	const work_gradient = rainbow;
-
-	const lines = [
-		name_gradient(data.name.toUpperCase()),
-		chalk.cyan(`@${data.handle}`),
-		'',
-		`${chalk.bold('Work:')}  ${work_gradient(data.work)}`,
-		`${chalk.bold('Bluesky:')}  ${link_gradient(data.bluesky)}`,
-		`${chalk.bold('GitHub:')}  ${link_gradient(data.github)}`,
-		`${chalk.bold('LinkedIn:')}  ${link_gradient(data.linkedin)}`,
-		`${chalk.bold('Web:')}  ${link_gradient(data.web)}`,
-	];
-
-	return boxen(lines.join('\n'), boxen_options);
+function plain_card(profile: CardProfile): string {
+	return [
+		`${profile.name} (@${profile.handle})`,
+		`Work: ${profile.work}`,
+		`Bluesky: ${profile.bluesky}`,
+		`GitHub: ${profile.github}`,
+		`LinkedIn: ${profile.linkedin}`,
+		`Web: ${profile.web}`,
+	].join('\n');
 }
 
-export function display_card(): void {
-	console.log(create_card(card_data));
+export function create_card(
+	profile: CardProfile = default_profile,
+	options: CardRenderOptions = {},
+): string {
+	if (options.plain) return plain_card(profile);
+
+	const color = options.color ?? chalk.level > 0;
+	const style = (
+		value: string,
+		gradient: (text: string) => string,
+	) => (color ? gradient(value) : value);
+	const bold = (value: string) => (color ? chalk.bold(value) : value);
+	const lines = [
+		style(profile.name.toUpperCase(), passion),
+		style(`@${profile.handle}`, chalk.cyan),
+		'',
+		`${bold('Work:')}  ${style(profile.work, rainbow)}`,
+		`${bold('Bluesky:')}  ${style(profile.bluesky, instagram)}`,
+		`${bold('GitHub:')}  ${style(profile.github, instagram)}`,
+		`${bold('LinkedIn:')}  ${style(profile.linkedin, instagram)}`,
+		`${bold('Web:')}  ${style(profile.web, instagram)}`,
+	];
+	const render_options = color
+		? boxen_options
+		: { ...boxen_options, borderColor: undefined };
+
+	return boxen(lines.join('\n'), render_options);
+}
+
+export function display_card(
+	profile: CardProfile = default_profile,
+	options: CardRenderOptions = {},
+): void {
+	console.log(create_card(profile, options));
 }
