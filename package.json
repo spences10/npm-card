@@ -2,9 +2,22 @@
 	"name": "spences10",
 	"version": "3.0.2",
 	"description": "My npm card",
-	"type": "module",
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
+	"keywords": [
+		"business card",
+		"card",
+		"npm",
+		"user details"
+	],
+	"homepage": "https://github.com/spences10/spences10#readme",
+	"bugs": {
+		"url": "https://github.com/spences10/spences10/issues"
+	},
+	"license": "MIT",
+	"author": "Scott Spence <spences10apps@gmail.com> (https://scottspence.com)",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/spences10/spences10.git"
+	},
 	"bin": {
 		"spences10": "./dist/index.js"
 	},
@@ -13,15 +26,29 @@
 		"LICENSE",
 		"README.md"
 	],
+	"type": "module",
+	"main": "./dist/api.js",
+	"types": "./dist/api.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/api.d.ts",
+			"import": "./dist/api.js",
+			"default": "./dist/api.js"
+		}
+	},
 	"scripts": {
-		"build": "tsc && chmod +x dist/index.js",
-		"check": "tsc --noEmit",
-		"start": "node dist/index.js",
-		"format": "prettier --write .",
-		"format:check": "prettier --check .",
+		"build": "vp pack",
+		"dev": "vp pack --watch",
+		"start": "node ./dist/index.js",
+		"check": "vp check",
+		"check:fix": "vp check --fix",
+		"format": "vp check --fix",
+		"format:check": "vp check",
+		"test": "pnpm run build && vp test",
+		"test:watch": "vp test watch",
 		"changeset": "changeset",
 		"version": "changeset version",
-		"release": "pnpm run build && changeset publish"
+		"release": "git diff --quiet && git diff --cached --quiet && pnpm run build && changeset publish"
 	},
 	"dependencies": {
 		"boxen": "^8.0.1",
@@ -32,23 +59,9 @@
 		"@changesets/cli": "^3.0.1",
 		"@types/gradient-string": "^1.1.6",
 		"@types/node": "^26.4.0",
-		"prettier": "^3.9.6",
-		"typescript": "^7.0.2"
+		"typescript": "^7.0.2",
+		"vite-plus": "^0.3.0",
+		"vitest": "^4.1.11"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/spences10/spences10.git"
-	},
-	"keywords": [
-		"npm",
-		"card",
-		"business card",
-		"user details"
-	],
-	"author": "Scott Spence <spences10apps@gmail.com> (https://scottspence.com)",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/spences10/spences10/issues"
-	},
-	"homepage": "https://github.com/spences10/spences10#readme"
+	"packageManager": "pnpm@11.24.0"
 }

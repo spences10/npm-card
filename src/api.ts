@@ -1,0 +1,53 @@
+import boxen, { type Options as BoxenOptions } from 'boxen';
+import chalk from 'chalk';
+import { instagram, passion, rainbow } from 'gradient-string';
+
+interface CardData {
+	name: string;
+	handle: string;
+	work: string;
+	bluesky: string;
+	github: string;
+	linkedin: string;
+	web: string;
+}
+
+const card_data: CardData = {
+	name: 'Scott Spence',
+	handle: 'spences10',
+	work: 'Engineering Lead @XtendOps',
+	bluesky: 'https://ss10.dev/bluesky',
+	github: 'https://ss10.dev/git',
+	linkedin: 'https://ss10.dev/li',
+	web: 'https://scottspence.com',
+};
+
+const boxen_options: BoxenOptions = {
+	padding: 1,
+	margin: 1,
+	borderStyle: 'round',
+	borderColor: '#663399',
+};
+
+function create_card(data: CardData): string {
+	const name_gradient = passion;
+	const link_gradient = instagram;
+	const work_gradient = rainbow;
+
+	const lines = [
+		name_gradient(data.name.toUpperCase()),
+		chalk.cyan(`@${data.handle}`),
+		'',
+		`${chalk.bold('Work:')}  ${work_gradient(data.work)}`,
+		`${chalk.bold('Bluesky:')}  ${link_gradient(data.bluesky)}`,
+		`${chalk.bold('GitHub:')}  ${link_gradient(data.github)}`,
+		`${chalk.bold('LinkedIn:')}  ${link_gradient(data.linkedin)}`,
+		`${chalk.bold('Web:')}  ${link_gradient(data.web)}`,
+	];
+
+	return boxen(lines.join('\n'), boxen_options);
+}
+
+export function display_card(): void {
+	console.log(create_card(card_data));
+}
