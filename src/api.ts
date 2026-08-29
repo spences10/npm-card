@@ -15,7 +15,7 @@ interface CardData {
 const card_data: CardData = {
 	name: 'Scott Spence',
 	handle: 'spences10',
-	work: 'Engineering Lead @XtendOps',
+	work: 'Product Engineer @ Cloud Lobsters',
 	bluesky: 'https://ss10.dev/bluesky',
 	github: 'https://ss10.dev/git',
 	linkedin: 'https://ss10.dev/li',

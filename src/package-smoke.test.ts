@@ -49,6 +49,7 @@ describe('package smoke', () => {
 		});
 
 		expect(output).toContain('SCOTT SPENCE');
+		expect(output).toContain('Product Engineer @ Cloud Lobsters');
 		expect(output).toContain('https://scottspence.com');
 	});
 
