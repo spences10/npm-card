@@ -51,7 +51,7 @@
 		"release": "git diff --quiet && git diff --cached --quiet && pnpm run build && changeset publish"
 	},
 	"dependencies": {
-		"boxen": "^8.0.1",
+		"boxen": "^9.0.0",
 		"chalk": "^6.0.0",
 		"citty": "^0.2.2",
 		"gradient-string": "^3.0.0"
