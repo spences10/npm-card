@@ -6,6 +6,8 @@ Run the card without installing it:
 npx spences10
 ```
 
+![The card animating in: a navy card wipes open, pixels fly in to spell SCOTT SPENCE, and the links decrypt into place](https://raw.githubusercontent.com/spences10/npm-card/main/assets/card.gif)
+
 In a terminal with colour and room for it, the card animates in: a
 navy card wipes open, the pixels of the name fly in and land, and the
 details decrypt into place. Press any key to skip to the end.
