@@ -24,38 +24,44 @@ function run_cli(
 	);
 }
 
+const package_version = (
+	JSON.parse(readFileSync('package.json', 'utf-8')) as {
+		version: string;
+	}
+).version;
+
 describe('package smoke', () => {
 	const cli_path = join(process.cwd(), 'dist', 'index.js');
 
 	it('runs the default card', () => {
 		const output = run_cli([], { NO_COLOR: '1' });
 
-		expect(output).toContain('SCOTT SPENCE');
-		expect(output).toContain('Product Engineer @ Cloud Lobsters');
-		expect(output).toContain('https://scottspence.com');
+		expect(output).toContain('@spences10');
+		expect(output).toContain('Product Engineer & Engineering Lead');
+		expect(output).toContain('scottspence.com');
 	});
 
 	it('outputs a plain card', () => {
 		const output = run_cli(['--plain']);
 
 		expect(output).toContain('Scott Spence (@spences10)');
-		expect(output).not.toContain('╭');
+		expect(output).not.toContain('┏');
 	});
 
 	it('outputs the profile as JSON', () => {
 		const profile = JSON.parse(run_cli(['--json'])) as {
 			name?: string;
-			work?: string;
+			role?: string;
 		};
 
 		expect(profile.name).toBe('Scott Spence');
-		expect(profile.work).toBe('Product Engineer @ Cloud Lobsters');
+		expect(profile.role).toBe('Product Engineer & Engineering Lead');
 	});
 
 	it('disables ANSI colors explicitly', () => {
 		const output = run_cli(['--no-color'], { FORCE_COLOR: '3' });
 
-		expect(output).toContain('SCOTT SPENCE');
+		expect(output).toContain('@spences10');
 		expect(output).not.toContain('\u001B[');
 	});
 
@@ -66,7 +72,16 @@ describe('package smoke', () => {
 		expect(help).toContain('--plain');
 		expect(help).toContain('--json');
 		expect(help).toContain('--no-color');
-		expect(version).toContain('3.0.3');
+		expect(help).toContain('--no-animation');
+		expect(help).toContain('--compact');
+		expect(version.trim()).toBe(package_version);
+	});
+
+	it('outputs the compact card', () => {
+		const output = run_cli(['--compact', '--no-color']);
+
+		expect(output).toContain('@spences10 · Product Engineer');
+		expect(output).not.toContain('SVELTE AMBASSADOR');
 	});
 
 	it('imports the public API without CLI side effects', async () => {

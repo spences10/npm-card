@@ -30,21 +30,36 @@ const main = defineCommand({
 			description: 'Output the profile as JSON',
 			default: false,
 		},
+		compact: {
+			type: 'boolean',
+			alias: 'c',
+			description: 'Use the compact card',
+			default: false,
+		},
 		color: {
 			type: 'boolean',
 			description: 'Enable ANSI colors',
 			negativeDescription: 'Disable ANSI colors',
 			default: true,
 		},
+		animation: {
+			type: 'boolean',
+			description: 'Animate the card in',
+			negativeDescription: 'Show the finished card straight away',
+			default: true,
+		},
 	},
-	run({ args }) {
+	async run({ args }) {
 		if (args.json) {
 			console.log(JSON.stringify(default_profile, null, 2));
 			return;
 		}
-		display_card(default_profile, {
+		await display_card(default_profile, {
 			plain: args.plain,
-			color: args.color,
+			// --no-color turns colour off; otherwise detect it
+			color: args.color ? undefined : false,
+			layout: args.compact ? 'compact' : 'auto',
+			animate: args.animation,
 		});
 	},
 });
